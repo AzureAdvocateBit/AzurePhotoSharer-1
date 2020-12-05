@@ -1,8 +1,8 @@
 # Azure Photo Sharer
 
-This is a sample app showing how you can build a cross-platform [Xamarin](https://visualstudio.microsoft.com/xamarin/?WT.mc_id=azurefree-github-jabenn) app that allows you to take a photo and share it with other users using Azure. This can be built using the [Azure Free Account](https://azure.microsoft.com/free/?WT.mc_id=azurefree-github-jabenn).
+This is a sample app showing how you can build a cross-platform [Xamarin](https://visualstudio.microsoft.com/xamarin/?WT.mc_id=academic-0000-jabenn) app that allows you to take a photo and share it with other users using Azure. This can be built using the [Azure Free Account](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jabenn).
 
-The back end is build using [Azure Functions](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=azurefree-github-jabenn), [Azure Storage](https://docs.microsoft.com/azure/storage/?WT.mc_id=storage-github-jabenn) and [Cognitive services](https://docs.microsoft.com/azure/cognitive-services/?WT.mc_id=azurefree-github-jabenn).
+The back end is build using [Azure Functions](https://docs.microsoft.com/azure/azure-functions/?WT.mc_id=academic-0000-jabenn), [Azure Storage](https://docs.microsoft.com/azure/storage/?WT.mc_id=academic-0000-jabenn) and [Cognitive services](https://docs.microsoft.com/azure/cognitive-services/?WT.mc_id=academic-0000-jabenn).
 
 The architecture of this app is:
 
@@ -38,13 +38,13 @@ This app is made up of seven projects - two for the back end, four for the mobil
 
 ## To get started
 
-You will need to register for an Azure free account here: [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=azurefree-github-jabenn).
+You will need to register for an Azure free account here: [azure.microsoft.com/free](https://azure.microsoft.com/free/?WT.mc_id=academic-0000-jabenn).
 
 > __NOTE__
 >
 > When creating resources you should use the same Resource Group for them all to make it easier to clean them up later.
 
-* From the [Azure portal](https://portal.azure.com/?WT.mc_id=azurefree-github-jabenn), create a new __Content Moderation__ resource using the F0 free tier.
+* From the [Azure portal](https://portal.azure.com/?WT.mc_id=academic-0000-jabenn), create a new __Content Moderation__ resource using the F0 free tier.
   ![Searching for the content moderator resource in the Azure Portal](./Images/ContentModerator.png)
 
 * Create a new __Computer Vision__ resource, again using the F0 free tier.
@@ -105,7 +105,7 @@ You will need to register for an Azure free account here: [azure.microsoft.com/f
 
 ## Running the service locally on Windows
 
-* Install the [Azure Storage Emulator](https://docs.microsoft.com/azure/storage/common/storage-use-emulator/?WT.mc_id=azurefree-github-jabenn) and launch it
+* Install the [Azure Storage Emulator](https://docs.microsoft.com/azure/storage/common/storage-use-emulator/?WT.mc_id=academic-0000-jabenn) and launch it
 * Start the `AzurePhotoSharer.Functions` project without debugging.
   
   ![The functions running in the local functions host](./Images/RunningLocalFunc.png)
@@ -131,18 +131,18 @@ You will need to register for an Azure free account here: [azure.microsoft.com/f
 
 ## Running the service from Azure
 
-* From the [Azure portal](https://portal.azure.com/?WT.mc_id=azurefree-github-jabenn), create a new __Function App__.
+* From the [Azure portal](https://portal.azure.com/?WT.mc_id=academic-0000-jabenn), create a new __Function App__.
   ![Searching for the function app resource in the Azure Portal](./Images/FunctionsApp.png)
 
 * Create a new __Storage account - blob, data lake gen 2 (preview), file, table, queue__ resource.
 
   ![Searching for the storage resource in the Azure Portal](./Images/StorageAccount.png)
 
-* Deploy both functions apps from Visual Studio to this Function App, either by [publishing directly form inside Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs/?WT.mc_id=azurefree-github-jabenn), or by using the [__Deployment Center__](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment/?WT.mc_id=azurefree-github-jabenn). Publishing from Visual Studio should never be used for production code.
+* Deploy both functions apps from Visual Studio to this Function App, either by [publishing directly form inside Visual Studio](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs/?WT.mc_id=academic-0000-jabenn), or by using the [__Deployment Center__](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment/?WT.mc_id=academic-0000-jabenn). Publishing from Visual Studio should never be used for production code.
 
   ![Friends don't let friends right-click publish](https://damianbrady.com.au/content/images/2018/01/friends-sticker.png)
 
-* Configure the [application settings](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings/?WT.mc_id=azurefree-github-jabenn) for both Functions app. 
+* Configure the [application settings](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings/?WT.mc_id=academic-0000-jabenn) for both Functions app. 
   Set the following fields for the `AzurePhotoSharer.Functions` app:
   
   * `MojifierUrl` - set this to the URL for the published `AzurePhotoSharer.FSharp.Functions` project
@@ -168,7 +168,7 @@ You will need to register for an Azure free account here: [azure.microsoft.com/f
 
 This app is configured to use authentication, it just needs to be turned on in the app and enabled on the Function App.
 
-* Function app authentication can be using a number of different accounts. The mobile app is configured to authenticate using a Microsoft account. Configure the authentication according to the [docs](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-microsoft-authentication/?WT.mc_id=azurefree-github-jabenn).
+* Function app authentication can be using a number of different accounts. The mobile app is configured to authenticate using a Microsoft account. Configure the authentication according to the [docs](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-microsoft-authentication/?WT.mc_id=academic-0000-jabenn).
 * Set the __Allowed External Redirect URLs__ setting to be `azurephotosharer://easyauth.callback`. This matches the URL scheme already configured in the mobile app.
 * In the `AzureServiceBase.cs` file in the `AzurePhotoSharer` project, locate the `IsLoggedIn` method. Delete the `return true;` statement and uncomment the remaining lines.
 
